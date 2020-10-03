@@ -138,7 +138,7 @@ custom_sumerians = {
 # > world_steppe_west
 # > world_steppe_east
 
-
+ 
 world_europe_west_britannia = {
 	duchies = {
 		# England
@@ -232,8 +232,8 @@ world_europe_east = {
 		# d_beloozero d_pskov
 		#Bjarmaland
 		d_biarmia d_vologda d_chudia d_ustyug
-        #Galicia-Volhynia
-        d_volhynia d_halych d_cherven_cities
+		#Galicia-Volhynia
+		d_volhynia d_halych d_cherven_cities
 		#West Perm
 		# d_hlynov d_bjarmia
 		#Hungary
@@ -271,7 +271,7 @@ world_middle_east_arabia = {
 		#Arabia
 		d_jawf d_amman d_shammar d_medina d_mecca d_asir d_najd d_yamama d_al-hasa d_bahrain d_oman
 		#Yemen
-		d_sanaa d_jawf-al-yamani d_taizz d_hadramawt d_mahra
+		d_sanaa d_jawf-al-yamani d_taizz d_hadramawt d_mahra d_socotra
 		#Mesopotamia
 		d_kermanshah d_basra d_baghdad d_samarra d_kurdistan d_wasit d_kufa
 		#Sinai
@@ -326,8 +326,6 @@ world_india_bengal = {
 		d_daksina_kosala d_tosali d_kalinga d_dandakaranya
 		#Bihar
 		d_tirabhukti d_kasi d_jharkand d_magadha
-		#Himalaya
-		d_kurmanchal d_khasa d_nepal d_limbuwan
 	}
 }
 world_india_rajastan = {
@@ -346,6 +344,10 @@ world_india_rajastan = {
 		d_dadhipadra d_akara_dasarna d_anupa
 		#Kosala
 		d_kanyakubja d_saryupara d_jejakabhukti
+		#Himalaya
+		d_kurmanchal d_khasa d_nepal d_limbuwan
+		#Kashmir
+		d_kasmira
 	}
 }
 world_africa_north_west = {
@@ -490,7 +492,7 @@ world_tibet = {
 		#Lhomon
 		d_bumthang d_paro d_monyul d_lhoyul d_dzayul
 		#Kashmir
-		d_kasmira d_pamir
+		d_pamir
 	}
 }
 world_burma = {
@@ -572,7 +574,13 @@ custom_germany = {
 }
 custom_northern_italy = {
 	duchies = {
-		d_friuli d_verona d_piedmonte d_lombardia d_genoa d_emilia d_romagna d_pisa d_toscana d_ancona d_spoleto d_latium d_corsica
+		#k_italy
+		d_friuli d_verona d_piedmonte d_lombardia d_genoa d_emilia d_pisa d_toscana
+		#k_romagna
+		d_romagna d_ancona d_spoleto d_latium
+		#k_sardinia (exempting Sardinia)
+		d_corsica
+		#Exclude k_venezia.
 	}
 }
 custom_netherlands = {
@@ -654,7 +662,7 @@ custom_scotland = {
 }
 custom_burgundy = { #Expanded dejure.
 	duchies = {
-		d_burgundy d_bar d_provence d_savoie d_dauphine d_upper_burgundy d_transjurania
+		d_burgundy d_provence d_savoie d_dauphine d_upper_burgundy d_transjurania
 	}
 }
 custom_roman_empire = { #Only the provinces needed to restore the Empire, not the full borders.
@@ -793,9 +801,19 @@ custom_roman_full_borders = {
 	}
 }
 custom_outremer = {
-	regions = {
-		world_middle_east_arabia #The entire Peninsula, containing k_arabia, k_mesopotamia, part of k_syria and d_sinai.
-		world_middle_east_jerusalem #Containing k_jerusalem and the rest of k_syria
+	duchies = {
+		#Jazira
+		d_diyarrabia d_diyarmudar d_diyarbakr d_euphrates
+		#Arabia (minus extremities)
+		d_jawf d_amman d_shammar d_medina d_mecca d_asir d_najd
+		#Mesopotamia
+		d_kermanshah d_basra d_baghdad d_samarra d_kurdistan d_wasit d_kufa
+		#Borders of Egypt
+		d_sinai
+		#Syria
+		d_damascus d_aleppo d_antioch d_edessa d_homs d_lebanon d_palmyra
+		#Jerusalem
+		d_oultrejourdain d_palestine d_urdunn
 	}
 }
 custom_sicily = { 
@@ -825,7 +843,11 @@ custom_europe_western_germany = {
 		# Lotharingia
 		d_luxembourg d_brabant d_julich d_upper_lorraine d_lower_lorraine
 		# East Francia
-		d_west_franconia d_east_franconia d_hesse d_currezia d_alsace d_swabia
+		d_westfalen d_angria d_ostfalen d_anhalt
+		d_west_franconia d_east_franconia d_hesse d_thuringia
+		d_currezia d_alsace d_swabia
+		# Bavaria
+		d_nordgau d_bavaria d_augsburg d_salzburg d_tyrol
 	}
 }
 custom_europe_eastern_germany = {
@@ -854,6 +876,10 @@ custom_ganges_plain = {
 		d_suhma
 		d_varendra
 		d_vanga
+		d_jharkand
+		d_ajmer
+		d_jejakabhukti
+		d_haritanaka
 	}
 }
 
@@ -868,14 +894,9 @@ custom_bactria = {
 		d_balkh
 		d_nasa
 
-		# All of k_makran
-		d_sistan
-		d_makran
-		d_jabal_kufs
-
-		# Eastern half of k_daylam
-		d_gurgan
-		d_tabaristan
+		# Parts of k_trasoxiana
+		d_khuttal
+		d_badakhshan
 
 		# Small sliver of k_karakhand
 		d_soghd
@@ -903,36 +924,36 @@ custom_northern_england = {
 }
 
 custom_slavia = {
-    duchies = {
-        #Poland
-        d_lesser_poland d_wielkopolska d_mazovia d_upper_silesia d_lower_silesia d_kuyavia
-        #Pomerania 
-        d_pommerania d_nordmark d_pomerelia d_ostmark
-        #Bohemia
-        d_bohemia d_moravia
-        #Croatia
-        d_dalmatia d_croatia d_slavonia
-        #Bosnia
-        d_bosna d_usora
-        #Serbia        
-        d_rashka d_macva d_duklja
-        #Bulgaria
-        d_vidin d_turnovo d_dobrudja d_bulgaria d_philippopolis
-        #Wallachia (dacia)
-        d_transylvanian_alps d_muntenia d_oltenia
-        #Moldavia
-        d_bukovina d_moldova d_bugeac
-        #Hungary
-        d_visegrad d_somogy d_nyitra d_ungvar d_transcarpathia d_transylvania d_bihar d_temes d_bacs d_gyor d_syrmia
-        #White Rus 
-        d_grodno d_pinsk d_minsk d_polotsk d_smolensk
-        #Galicia-Volhynia
-        d_volhynia d_halych d_cherven_cities
-        #Ruthenia
-        d_kiev d_turov d_pereyaslavl d_chernigov d_ryazan d_karachev d_novosil
-        #Novgorod
-        d_novgorod d_vepsia d_luki
-    }
+	duchies = {
+		#Poland
+		d_lesser_poland d_wielkopolska d_mazovia d_upper_silesia d_lower_silesia d_kuyavia
+		#Pomerania 
+		d_pommerania d_nordmark d_pomerelia d_ostmark
+		#Bohemia
+		d_bohemia d_moravia
+		#Croatia
+		d_dalmatia d_croatia d_slavonia
+		#Bosnia
+		d_bosna d_usora
+		#Serbia		
+		d_rashka d_macva d_duklja
+		#Bulgaria
+		d_vidin d_turnovo d_dobrudja d_bulgaria d_philippopolis
+		#Wallachia (dacia)
+		d_transylvanian_alps d_muntenia d_oltenia
+		#Moldavia
+		d_bukovina d_moldova d_bugeac
+		#Hungary
+		d_visegrad d_somogy d_nyitra d_ungvar d_transcarpathia d_transylvania d_bihar d_temes d_bacs d_gyor d_syrmia
+		#White Rus 
+		d_grodno d_pinsk d_minsk d_polotsk d_smolensk
+		#Galicia-Volhynia
+		d_volhynia d_halych d_cherven_cities
+		#Ruthenia
+		d_kiev d_turov d_pereyaslavl d_chernigov d_ryazan d_karachev d_novosil
+		#Novgorod
+		d_novgorod d_vepsia d_luki
+	}
 }
 
 custom_greater_armenia = {
@@ -1059,6 +1080,54 @@ custom_sub_saharan_africa_immediate = {
 	}
 }
 
+custom_carolingian_francia = {
+	duchies = {
+		#Basically the same, sans the Breton marches.
+		d_berry d_anjou d_normandy d_orleans d_champagne d_valois d_burgundy d_bar d_aquitaine d_toulouse d_languedoc d_armagnac d_gascogne d_poitou d_auvergne d_bourbon d_provence d_savoie d_dauphine d_upper_burgundy d_transjurania
+	}
+}
+
+custom_carolingian_iberia = {
+	duchies = {
+		#k_aragorn, except Mallorca.
+		d_aragon d_barcelona
+		#k_navarra
+		d_navarra d_viscaya
+	}
+}
+
+custom_carolingian_germany = {
+	duchies = {
+		#k_east_francia
+		d_east_franconia d_west_franconia d_hesse d_currezia d_alsace d_swabia
+		#k_saxony (west)
+		d_westfalen d_angria d_ostfalen d_thuringia d_holstein
+	}
+}
+
+custom_core_switzerland = {
+	duchies = {
+		#k_burgundy
+		d_currezia
+		#k_germany
+		d_transjurania
+	}
+}
+
+custom_core_austria = {
+	duchies = {
+		#k_bavaria
+		d_osterreich d_steyermark
+	}
+}
+
+custom_stretch_austria = {
+	duchies = {
+		#k_bavaria
+		d_carinthia d_krain d_istria
+	}
+}
+
 ###########################################################################
 # Graphical Regions
 ###########################################################################
@@ -1165,7 +1234,16 @@ world_jazira = { #k_jazira
 # Start area
 special_mongol_empire_start_region = {
 	duchies = {
-		d_otuken d_ogrash d_selenga_valley d_ovorkhangai d_arkhangai d_khovsgol d_gobi_altai
+		#k_mongolia
+		d_otuken d_ogrash d_selenga_valley d_ovorkhangai d_arkhangai d_khovsgol d_gobi_altai d_ubsunur_hollow d_khovd
+		#k_tuva
+		d_togina d_tannu_ola d_western_sayan
+		#k_khakassia
+		d_khakass_hollow d_shoria d_kargassia d_eastern_sayan
+		#k_buryatia
+		d_uda_valley d_dauria d_bargujin_tukum d_baigaluuls d_tsagaanbaigal
+		#k_angara
+		d_yenisei_kan d_chuna_valley d_lena d_angara
 	}
 }
 
@@ -1324,8 +1402,8 @@ special_mongol_empire_white_horde_region = {
 		# d_greater_poland d_silesia d_yatviags
 		#Bjarmaland
 		d_biarmia d_vologda d_chudia d_ustyug
-        #Galicia-Volhynia
-        d_volhynia d_halych d_cherven_cities
+		#Galicia-Volhynia
+		d_volhynia d_halych d_cherven_cities
 		#West Perm
 		# d_hlynov d_bjarmia
 		#Hungary
